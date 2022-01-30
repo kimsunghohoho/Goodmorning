@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="EUC-KR">
+    <title>Kimsunghohoho's Page</title>
+    <script type="text/javascript">
+        var imgArray = new Array();
+        //imgArray[0]="01.jpg";  //사진
+        imgArray[0] = "C:Users/김성호/Desktop/개발/GoodMorning/src/testimg/01.jpg";  //사진
+        imgArray[1] = "02.jpg"; //사진
+        imgArray[2] = "03.jpg";    //사진
+        imgArray[3] = "04.jpg";    //사진
+
+
+        function showImage() {
+            var imgNum = Math.round(Math.random() * 3);
+            var objImg = document.getElementById("introImg");
+            objImg.src = imgArray[0];
+        }
+    </script>
+</head>
+
+<body onload="showImage()">
+    <img id="introImg" border="0">
+</body>
+
+</html>
+
+
+
+
+https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=darae9108&logNo=220753344251
+https://devfolio.kr/project/48

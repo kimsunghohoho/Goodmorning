@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title> Good morning my friends </title>
+    <script type="text/javascript">
+
+        var rand_img = 0;
+        var useRand = 0;
+
+        images = new Array();
+
+        images[1] = new Image();
+        images[1].src = "Image/01.jpg";
+
+        images[2] = new Image();
+        images[2].src = "Image/02.jpg";
+
+        images[3] = new Image();
+        images[3].src = "Image/03.jpg";
+
+        images[4] = new Image();
+        images[4].src = "Image/04.jpg";
+
+        images[5] = new Image();
+        images[5].src = "Image/05.jpg";
+
+        function SwapPic() {
+            var imgNum = images.length - 1;
+
+            do {
+                var randNum = Math.random();
+
+                rand_img = Math.round((imgNum - 1) * randNum) + 1;
+
+                // (상한값 - 하한값 + 1) * Math.randon() + 하한값
+                // 반올림 된 1~5 사이의 랜덤 수를 rand_img 변수에 담는다.
+
+            }
+            while (rand_img == useRand);
+            // rand_img 가 useRand=0 와 늘 같지 않으므로 do를 한번만 실행한다.
+
+            useRand = rand_img; // useRand 변수에 발생된 난수를 담는다.
+
+            document.random_img.src = images[useRand].src;
+        }
+
+  //-->
+    </script>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-61f2873c46de8ca3"></script>
+
+
+</head>
+
+<body leftmargin="0" topmargin="0">
+
+    <!-- <IMG src="Image/01.jpg" ; <br /><br /><br /><br /> -->
+    <<br /><br /><br /><br />
+
+    <center>
+
+
+
+        클릭하면 그림이 변경되어 나타납니다.
+
+        <p>
+
+            <A onClick="SwapPic();">
+                <IMG src="Image/01.jpg" style="width:500px; height:500px" ; name="random_img">
+            </A>
+            <!-- Go to www.addthis.com/dashboard to customize your tools -->
+        <div class="addthis_inline_share_toolbox_x7n9"></div>
+    </center>
+
+</body>
+
+</html>

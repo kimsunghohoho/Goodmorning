@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title> tableIMG </title>
+    <script>
+        // 이미지 클릭시 원본 크기로 팝업 보기
+        function doImgPop(img) {
+            img1 = new Image();
+            img1.src = (img);
+            imgControll(img);
+        }
+
+        function imgControll(img) {
+            if ((img1.width != 0) && (img1.height != 0)) {
+                viewImage(img);
+            }
+            else {
+                controller = "imgControll('" + img + "')";
+                intervalID = setTimeout(controller, 20);
+            }
+        }
+
+        function viewImage(img) {
+            W = img1.width;
+            H = img1.height;
+            O = "width=" + W + ",height=" + H + ",scrollbars=yes";
+            imgWin = window.open("", "", O);
+            imgWin.document.write("<html><head><title>:*:*:*: 이미지상세보기 :*:*:*:*:*:*:</title></head>");
+            imgWin.document.write("<body topmargin=0 leftmargin=0>");
+            imgWin.document.write("<img src=" + img + " onclick='self.close()' style='cursor:pointer;' title ='클릭하시면 창이 닫힙니다.'>");
+            imgWin.document.close();
+        }
+    </script>
+    
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-61f2873c46de8ca3"></script>
+
+
+</head>
+
+<body leftmargin="0" topmargin="0">
+
+    <!-- <IMG src="Image/01.jpg" ; <br /><br /><br /><br /> -->
+    <br /><br /><br /><br />
+
+
+    <center>
+<!-- 사용시 -->
+
+    <img src="Image/01.jpg" width="295px" height="295px" title="클릭하시면 원본크기로 보실 수 있습니다."
+        style="cursor: pointer;" onclick="doImgPop('Image/01.jpg')" " />
+
+
+        <table border="5">
+            <!-- <thead>
+            <tr><th>title1</th><th>title2</th><th>title3</th></tr>
+        </thead> -->
+            <tbody>
+                <tr>
+                    <td><img src="Image/01.gif" style="width:500px; height:500px"></td>
+                    <td><img src="Image/02.gif" style="width:500px; height:500px"></td>
+                </tr>
+                <tr>
+                    <td><img src="Image/03.gif" style="width:500px; height:500px"></td>
+                    <td><img src="Image/04.gif" style="width:500px; height:500px"></td>
+                </tr>
+                <tr>
+                    <td><img src="Image/05.gif" style="width:500px; height:500px"></td>
+                    <td><img src="Image/06.gif" style="width:500px; height:500px"></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>title1</td>
+                    <td>title2</td>
+                    <!-- <td>title3</td> -->
+                </tr>
+            </tfoot>
+        </table>
+        <!-- <div class="addthis_inline_share_toolbox_x7n9"></div> -->
+        <p>
+    </center>
+
+</body>
+
+</html>
